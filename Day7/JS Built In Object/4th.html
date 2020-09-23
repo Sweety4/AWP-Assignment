@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Stopwatch</title>
+    <script>
+        hh = mm = ss = ms = 0;
+        function prepare()
+        {
+            if(hh<10)
+            {
+                hh = pad(hh, 1);
+            }
+
+            if (mm < 10) {
+                mm = pad(mm, 1);
+            }
+
+            if (ss < 10) {
+                ss = pad(ss, 1);
+            }
+
+            if (ms < 10) {
+                ms = pad(ms, 1);
+            }
+            time = hh + ":" + mm + ":" + ss + ":" + ms;
+            document.getElementById('time').innerHTML = time;
+
+        }
+        function start() {
+            ms++;
+            if (ms == 1000) {
+                ss++;
+                ms = 0;
+            }
+            if (ss == 60) {
+                mm++;
+                ss = 0;
+            }
+            if (mm == 60) {
+                hh++;
+                mm = 0;
+            }
+            prepare();
+            flag = setTimeout(start, 1);
+        }
+        function pad(num, size) {
+            var ss = "";
+            for(i=0;i<size;i++)
+            {
+                ss += "0";
+            }
+            ss += parseInt(num);
+            return ss;
+        }
+        function stop() {
+            clearTimeout(flag);
+        }
+        function reset() {
+            hh = mm = ss = ms = 0;
+            prepare();
+        }
+    </script>
+
+</head>
+<body onload ="prepare()">
+        <div>Time: <span id="time"></span></div>
+        <input type="button" value="start" onclick="start();" >
+        <input type="button" value="stop" onclick="stop();" >
+        <input type="button" value="reset" onclick="reset();" >
+   
+</body>
+</html>

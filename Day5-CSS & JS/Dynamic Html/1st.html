@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Factorial</title>
+    <script>
+        function calFact(n) {
+            var i, f;
+            f = 1;
+            for (i = 1; i <= n; i++) {
+                f = f * i;
+            }
+           
+            alert("Factorial : " + f);
+            document.getElementById("result").innerHTML = "Factorial of " + n + " is : " + f;
+        }
+   </script>
+</head>
+<body>
+   
+    <div style="border:1px solid gray;width:280px">
+        <form>
+            <table style="background-color:orange">
+                <tr>
+                    <td>Enter Number</td>
+                    <td><input type="text" name="num" /> </td>
+                </tr>
+                <tr>
+                    <td><input type="button" onclick="calFact(num.value)" value="Factorial" /></td>
+                </tr>
+            </table>
+        </form>
+        <p id="result" style="text-align:center"></p>
+    </div>
+   
+</body>
+</html>

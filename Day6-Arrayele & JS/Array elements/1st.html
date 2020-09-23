@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Array Elements</title>
+    <script>
+    var arr = [];
+    function Accept()
+    {
+        for(var i=0;i<5;i++)
+        {
+            arr[i] = parseInt(prompt("Enter array elements" + i));
+        }
+
+    }
+
+    function checkEven() {
+        var bool = arr.every(function (element) {
+            if (element % 2 == 0)
+                return true;
+            else
+                return false;
+        });
+        document.getElementById("result").innerHTML = "All elements are even :"  +  bool;
+    }
+    function checkOdd() {
+        var bool = arr.every(function (element) {
+            if (element % 2 != 0)
+                return true;
+            else
+                return false;
+        });
+        document.getElementById("result").innerHTML = "All elements are odd :" + bool;
+    }
+
+    
+    function checkPrime() {
+        var bool = arr.every(function (element) {
+            for(i=2;i<element;i++)
+            {
+                if(element % i == 0)
+                    break;
+            }
+
+            if (i==element)
+                return true;
+            else
+                return false;
+        });
+        document.getElementById("result").innerHTML = "All are prime numbers : " + bool;
+    }
+    function filterOddEven() {
+        var even =arr.filter(function (element) {
+            return (element % 2 == 0)
+        });
+        var odd = arr.filter(function (element) {
+            return (element % 2 != 0)
+        });
+        document.getElementById("result").innerHTML = "Even : " + even.toString() + "<br/>Odd : " + odd.toString();
+    }
+
+    
+    </script>
+</head>
+
+<body onload="Accept()">
+    <button onclick="checkEven()">Check Even</button>
+    <button onclick="checkOdd()">Check Odd</button>
+    <button onclick="checkPrime()">Check Prime</button>
+    <button onclick="filterOddEven()">Display seperated even and odd</button>
+    <p id="result"></p>
+    
+</body>
+</html>

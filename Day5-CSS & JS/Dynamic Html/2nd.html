@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Power</title>
+    <script>
+        function calPow(b, e) {
+           
+            var power = 1;
+            for (i = 1; i <= e; i++) {
+                power *= b;
+            }
+            alert(b);
+            document.getElementById("result").innerHTML = b + " to power " + e + " is " + power;
+            
+        }
+    </script>
+
+</head>
+<body>
+
+    <div style="border:1px solid gray;width:280px">
+        <form>
+            <table style="background-color:orange">
+                <tr>
+                    <td>Enter Base Number</td>
+                    <td><input type="text" name="b" /> </td>
+
+                </tr>
+                <tr>
+                    <td>Enter Exponant Number</td>
+                    <td><input type="text" name="e" /> </td>
+
+                </tr>
+                <tr>
+                    <td><input type="button" onclick="calPow(b.value, e.value)" value="Power" /></td>
+                </tr>
+            </table>
+        </form>
+        <p id="result" style="text-align:center"></p>
+    </div>
+
+
+</body>
+</html>

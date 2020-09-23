@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Images</title>
+    <script language="JavaScript">
+        var i = 0;
+        var images = ["images/1.jpg", "images/2.jpg", "images/3.jpg", "images/4.jpg", "images/5.jpg"];
+        function previous() {
+            i--;
+            if (i ==-1)
+                i = images.length - 1;
+            documents.getElementsById("slideimg").src = "images/" + images[i];
+        }
+        function next() {
+            i++;
+            if (i == images.length)
+                i = 0;
+            documents.getElementsById("slideimg").src = "images/" + images[i];
+        }
+
+    </script>
+</head>
+<body>
+    <div>
+        <img height="200" id="slideimg" src="images/1.jpg" width="400" />
+    </div>
+    <br />
+    <button onclick="previous()">Previous</button>
+    <button onclick="next()">Next</button>
+</body>
+</html>

@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Formvalidation</title>
+    <script>
+        function validate() {
+            var uid = document.f1.uid.value;
+            if (uid.length < 8 || uid.length > 15) {
+                alert("uid length should be 8 - 15 characters");
+                document.f1.uid.value = "";
+                document.f1.uid.focus();
+                return;
+            }
+
+            var pwd = document.f1.pwd.value;
+            if (pwd.length < 6 || pwd.length > 12) {
+                alert("pwd length should be 6 - 12 characters");
+                document.f1.pwd.value = "";
+                document.f1.pwd.focus();
+                return;
+            }
+            var capitalflag = false;
+            var numflag = false;
+            for (i = 0; i < pwd.length; i++) {
+                var ascii = pwd.charCodeAt(i);
+                if (ascii >= 65 && ascii <= 90)
+                    capitalflag = true;
+                if (ascii >= 48 && ascii <= 57)
+                    numflag = true;
+            }
+            if (capitalflag == false) {
+                alert("pwd should have atleast one capital charater");
+                document.f1.pwd.value = "";
+                document.f1.pwd.focus();
+                return;
+            }
+            if (numflag == false) {
+                alert("pwd should have atleast one numeric charater");
+                document.f1.pwd.value = "";
+                document.f1.pwd.focus();
+                return;
+            }
+
+
+            var radioarr = document.getElementsByName("gender");
+            var radioflag = false;
+            for (i = 0; i < radioarr.length; i++) {
+                if (radioarr[i].checked == true)
+                    radioflag = true;
+            }
+            if (radioflag == false) {
+                alert("no gender is selected");
+                return;
+            }
+
+
+            alert("data gets submitted......")
+            document.f1.submit();
+
+
+        }
+    </script>
+</head>
+<body>
+    <form name="f1">
+        UID : <input type="text" name="uid" id="uid" /> <br />
+        PWD : <input type="text" name="pwd" /> <br />
+        Gender : <input type="radio" name="gender" value="male" />  Male
+        <input type="radio" name="gender" value="female" /> Female <br />
+        <input type="button" value="Register" onclick="validate()" />
+
+    </form>
+</body>
+</html>

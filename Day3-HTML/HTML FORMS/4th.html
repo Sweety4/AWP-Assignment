@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>From</title>
+</head>
+<body>
+    <div style="border:1px solid gray;width:680px">
+        <h3>Express Registration</h3>
+        <p>Please note that fields mark with astricks(*) to process your registration</p>
+        <table border="0" style="border-collapse:collapse">
+            <tr style="background-color:darkgray;color:white">
+                <td colspan="2">Personal Details</td>
+                <td colsapn="2">Address</td>
+            </tr>
+            <tr>
+                <td>Title:</td>
+                <td>
+                    <input type="text" name="title" size="5" />
+                    <br />
+                    (Mr/Mrs/Miss)
+                </td>
+                <td>Address:</td>
+                <td>
+                    <input type="text" name="address1" /> *
+                </td>
+            </tr>
+            <tr>
+                <td>First Name:</td>
+                <td><input type="text" name="fname" /> <br />*</td>
+                <td></td>
+                <td><input type="text" name="address2" /></td>
+            </tr>
+            <tr>
+                <td>Last Name:</td>
+                <td><input type="text" name="fname" /> <br />*</td>
+                <td>Town:</td>
+                <td><input type="text" name="town" />*</td>
+            </tr>
+            <tr>
+                <td>Email <br /> Address:</td>
+                <td><input type="text" name="email" /> <br />*</td>
+                <td>County/State:</td>
+                <td><input type="text" name="state" />*</td>
+            </tr>
+            <tr>
+                <td>Telephone:</td>
+                <td><input type="text" name="phone" /> <br />*</td>
+                <td>Country:</td>
+                <td>
+                    <select name="country">
+                        <option value="USA">United States</option>
+                        <option value="UK">United Kongdom</option>
+                        <option value="IND">India</option>
+                    </select>
+                    *
+                </td>
+            </tr>
+            <tr>
+                <td>Cell phone:</td>
+                <td><input type="text" name="cellphone" /> <br />*</td>
+                <td>Postcode:</td>
+                <td><input type="text" name="postcode" />*</td>
+            </tr>
+            <tr>
+                <td>Comment</td>
+                <td colspan="3">
+                    <textarea rows="3" cols="80"></textarea>
+                </td>
+            </tr>
+            <tr style="border:3px solid green">
+                <td>Feedback </td>
+                <td><input type="text" name="feedback" /> </td>
+                <td>Hear us from? </td>
+                <td>
+                    <input type="checkbox" name="chk1" value="fr" /> Friend
+                    <input type="checkbox" name="chk1" value="own" /> Site owner <br />
+                    <input type="checkbox" name="chk1" value="se" /> Search Engine
+                </td>
+            </tr>
+            <tr>
+                <td>Choose <br /> Password:</td>
+                <td><input type="text" name="cellphone" /> <br />*</td>
+                <td>Confirm <br /> Password:</td>
+                <td><input type="text" name="postcode" />*</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

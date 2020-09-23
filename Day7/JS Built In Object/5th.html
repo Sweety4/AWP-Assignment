@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Java script images</title>
+    <script>
+        var imgarr = ["images/1.jpg", "images/2.jpg", "images/3.jpg", "images/4.jpg", "images/5.jpg"];
+        var index = 0;
+
+        function swapImage() {
+            index++;
+            if (index == imgarr.length)
+                index =0;
+            document.getElementById("myimg").src = imgarr[index];
+            setTimeout("swapImage()", 1000);
+        }
+    </script>
+
+</head>
+<body onload="swapImage()">
+    <img src="images/1.jpg" width="300" height="300" id="myimg" />
+    <br />
+
+</body>
+</html>
